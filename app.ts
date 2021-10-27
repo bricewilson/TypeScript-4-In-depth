@@ -24,7 +24,7 @@ function LogFirstAvailable(books): void {
 }
 
 function GetBookTitlesByCategory(categoryFilter: Category): Array<string> {
-  console.log('Getting books in category: ' + categoryFilter);
+  console.log('Getting books in category: ' + Category[categoryFilter]);
 
   const allBooks = GetAllBooks();
   const filteredTitles: string[] = [];

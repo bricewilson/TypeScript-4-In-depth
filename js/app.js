@@ -20,7 +20,7 @@ function LogFirstAvailable(books) {
     console.log('First Available: ' + firstAvailable);
 }
 function GetBookTitlesByCategory(categoryFilter) {
-    console.log('Getting books in category: ' + categoryFilter);
+    console.log('Getting books in category: ' + Category[categoryFilter]);
     const allBooks = GetAllBooks();
     const filteredTitles = [];
     for (let currentBook of allBooks) {
