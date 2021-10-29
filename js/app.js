@@ -48,6 +48,15 @@ function GetBookByID(id) {
     const allBooks = GetAllBooks();
     return allBooks.filter(book => book.id === id)[0];
 }
+function CreateCustomerID(name, id) {
+    return name + id;
+}
 // *********************************************
-const fictionBooks = GetBookTitlesByCategory(Category.Fiction);
-fictionBooks.forEach((val, idx, arr) => console.log(++idx + ' - ' + val));
+let x;
+x = 5;
+let IdGenerator;
+IdGenerator = (name, id) => { return id + name; };
+let myID = CreateCustomerID('daniel', 20);
+console.log(myID);
+// const fictionBooks = GetBookTitlesByCategory(Category.Fiction);
+// fictionBooks.forEach((val, idx, arr) => console.log(++idx + ' - ' + val));
