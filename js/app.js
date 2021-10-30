@@ -71,8 +71,27 @@ function CheckoutBooks(customer, ...bookIDs) {
     }
     return booksCheckedOut;
 }
+function GetTitles(author, available) {
+    const allBooks = GetAllBooks();
+    const searchResults = [];
+    if (available !== undefined) {
+        for (let book of allBooks) {
+            if (book.author === author && book.available === available) {
+                searchResults.push(book.title);
+            }
+        }
+    }
+    else {
+        for (let book of allBooks) {
+            if (book.author === author) {
+                searchResults.push(book.title);
+            }
+        }
+    }
+    return searchResults;
+}
 // *********************************************
-let myBooks = CheckoutBooks('Thorne', 1, 3, 4);
+let myBooks = GetTitles('James Joyce', false);
 myBooks.forEach(title => console.log(title));
 // LogFirstAvailable();
 // let fictionBooks = GetBookTitlesByCategory();
