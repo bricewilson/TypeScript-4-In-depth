@@ -1,5 +1,6 @@
 import { Category } from './enums';
 import { Book, DamageLogger, Author, Librarian } from './interfaces';
+import { UniversityLibrarian } from './classes';
 
 function GetAllBooks(): Book[] {
   let books = [
@@ -130,3 +131,7 @@ function PrintBook(currentBook: Book): void {
 
 // PrintBook(myBook);
 // myBook.markDamaged('torn pages');
+
+let favoriteLibrarian: Librarian = new UniversityLibrarian();
+favoriteLibrarian.name = 'Sharon';
+favoriteLibrarian.assistCustomer('Elaine');
