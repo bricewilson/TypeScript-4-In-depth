@@ -1,4 +1,7 @@
-function GetAllBooks() {
+import { Category } from './enums';
+import { Book } from './interfaces';
+
+function GetAllBooks(): Book[] {
   let books = [
     { id: 1, title: 'Ulysses', author: 'James Joyce', available: true, category: Category.Fiction },
     { id: 2, title: 'A Farewell to Arms', author: 'Ernest Hemingway', available: false, category: Category.Fiction },
@@ -44,9 +47,7 @@ function LogBookTitles(titles: string[]): void {
   }
 }
 
-enum Category { Biography, Poetry, Fiction, History, Children };
-
-function GetBookByID(id: number) {
+function GetBookByID(id: number): Book {
   const allBooks = GetAllBooks();
   return allBooks.filter(book => book.id === id)[0];
 }
@@ -104,5 +105,21 @@ function GetTitles(author: string, available?: boolean): string[] {
   return searchResults;
 }
 
+function PrintBook(currentBook: Book): void {
+  console.log(currentBook.title + ' by ' + currentBook.author);
+}
+
 // *********************************************
 
+let myBook: Book = {
+  id: 5,
+  title: 'Pride and Prejudice',
+  author: 'Jane Austen',
+  available: true,
+  category: Category.Fiction,
+  pages: 250,
+  markDamaged: (reason: string) => console.log('Damaged: ' + reason)
+}
+
+PrintBook(myBook);
+myBook.markDamaged('missing back cover');
