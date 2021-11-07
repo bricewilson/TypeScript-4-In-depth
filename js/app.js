@@ -97,5 +97,8 @@ let myBook = {
     pages: 250,
     markDamaged: (reason) => console.log('Damaged: ' + reason)
 };
-PrintBook(myBook);
-myBook.markDamaged('missing back cover');
+let logDamage;
+logDamage = (damage) => console.log('Damage reported: ' + damage);
+logDamage('coffee stains');
+// PrintBook(myBook);
+// myBook.markDamaged('torn pages');
