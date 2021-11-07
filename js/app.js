@@ -88,17 +88,17 @@ function PrintBook(currentBook) {
     console.log(currentBook.title + ' by ' + currentBook.author);
 }
 // *********************************************
-let myBook = {
-    id: 5,
-    title: 'Pride and Prejudice',
-    author: 'Jane Austen',
-    available: true,
-    category: enums_1.Category.Fiction,
-    pages: 250,
-    markDamaged: (reason) => console.log('Damaged: ' + reason)
-};
-let logDamage;
-logDamage = (damage) => console.log('Damage reported: ' + damage);
-logDamage('coffee stains');
+// let myBook: Book = {
+//   id: 5,
+//   title: 'Pride and Prejudice',
+//   author: 'Jane Austen',
+//   available: true,
+//   category: Category.Fiction,
+//   pages: 250,
+//   markDamaged: (reason: string) => console.log('Damaged: ' + reason)
+// }
+// let logDamage: DamageLogger;
+// logDamage = (damage: string) => console.log('Damage reported: ' + damage);
+// logDamage('coffee stains');
 // PrintBook(myBook);
 // myBook.markDamaged('torn pages');
