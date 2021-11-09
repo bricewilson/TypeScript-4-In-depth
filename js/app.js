@@ -89,8 +89,18 @@ function PrintBook(currentBook) {
     console.log(currentBook.title + ' by ' + currentBook.author);
 }
 // *********************************************
-let refBook = new classes_1.Encyclopedia('WorldPedia', 1900, 10);
-refBook.printCitation();
+let Newspaper = class extends classes_1.ReferenceItem {
+    printCitation() {
+        console.log(`Newspaper: ${this.title}`);
+    }
+};
+let myPaper = new Newspaper('The Gazette', 2022);
+myPaper.printCitation();
+class Novel extends class {
+} {
+}
+// let refBook: ReferenceItem = new Encyclopedia('WorldPedia', 1900, 10);
+// refBook.printCitation();
 // let ref: ReferenceItem = new ReferenceItem('Updated Facts and Figures', 2024);
 // ref.printItem();
 // ref.publisher = 'Random Data Publishing';
