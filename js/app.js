@@ -90,7 +90,7 @@ function PrintBook(currentBook) {
 }
 // *********************************************
 let refBook = new classes_1.Encyclopedia('WorldPedia', 1900, 10);
-refBook.printItem();
+refBook.printCitation();
 // let ref: ReferenceItem = new ReferenceItem('Updated Facts and Figures', 2024);
 // ref.printItem();
 // ref.publisher = 'Random Data Publishing';
