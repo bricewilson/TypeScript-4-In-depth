@@ -1,6 +1,6 @@
-import { Book, DamageLogger, Author, Librarian } from './interfaces';
+import * as Interfaces from './interfaces';
 
-class UniversityLibrarian implements Librarian {
+class UniversityLibrarian implements Interfaces.Librarian {
   name: string;
   email: string;
   department: string;
