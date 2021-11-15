@@ -112,24 +112,3 @@ function PrintBook(currentBook: Book): void {
 
 // *********************************************
 
-let Newspaper = class extends ReferenceItem {
-  printCitation(): void {
-    console.log(`Newspaper: ${this.title}`);
-  }
-}
-
-let myPaper = new Newspaper('The Gazette', 2022);
-myPaper.printCitation();
-
-class Novel extends class { title: string } {
-  mainCharacter: string;
-}
-
-
-// let refBook: ReferenceItem = new Encyclopedia('WorldPedia', 1900, 10);
-// refBook.printCitation();
-
-// let ref: ReferenceItem = new ReferenceItem('Updated Facts and Figures', 2024);
-// ref.printItem();
-// ref.publisher = 'Random Data Publishing';
-// console.log(ref.publisher);
