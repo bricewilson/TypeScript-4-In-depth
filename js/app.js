@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const enums_1 = require("./enums");
-const classes_1 = require("./classes");
+const utilityFunctions_1 = require("./lib/utilityFunctions");
 function GetAllBooks() {
     let books = [
         { id: 1, title: 'Ulysses', author: 'James Joyce', available: true, category: enums_1.Category.Fiction },
@@ -89,19 +89,13 @@ function PrintBook(currentBook) {
     console.log(currentBook.title + ' by ' + currentBook.author);
 }
 // *********************************************
-let Newspaper = class extends classes_1.ReferenceItem {
-    printCitation() {
-        console.log(`Newspaper: ${this.title}`);
-    }
-};
-let myPaper = new Newspaper('The Gazette', 2022);
-myPaper.printCitation();
-class Novel extends class {
-} {
-}
-// let refBook: ReferenceItem = new Encyclopedia('WorldPedia', 1900, 10);
-// refBook.printCitation();
-// let ref: ReferenceItem = new ReferenceItem('Updated Facts and Figures', 2024);
-// ref.printItem();
-// ref.publisher = 'Random Data Publishing';
-// console.log(ref.publisher);
+let inventory = [
+    { id: 10, title: 'The C Programming Language', author: 'K & R', available: true, category: enums_1.Category.Software },
+    { id: 11, title: 'Code Complete', author: 'Steve McConnell', available: true, category: enums_1.Category.Software },
+    { id: 12, title: '8-Bit Graphics with Cobol', author: 'A. B.', available: true, category: enums_1.Category.Software },
+    { id: 13, title: 'Cool autoexec.bat Scripts!', author: 'C. D.', available: true, category: enums_1.Category.Software }
+];
+let purgedBooks = (0, utilityFunctions_1.Purge)(inventory);
+purgedBooks.forEach(book => console.log(book.title));
+let purgedNums = (0, utilityFunctions_1.Purge)([1, 2, 3, 4]);
+console.log(purgedNums);
