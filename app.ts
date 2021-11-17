@@ -1,8 +1,9 @@
 import { Category } from './enums';
-import { Book, Logger, Author, Librarian } from './interfaces';
+import { Book, Logger, Author, Librarian, Magazine } from './interfaces';
 import { UniversityLibrarian, ReferenceItem } from './classes';
 import { CalculateLateFee as CalcFee, MaxBooksAllowed, Purge } from './lib/utilityFunctions';
 import refBook from './encyclopedia';
+import Shelf from './shelf';
 
 function GetAllBooks(): Book[] {
   let books = [
@@ -121,8 +122,27 @@ let inventory: Array<Book> = [
   { id: 13, title: 'Cool autoexec.bat Scripts!', author: 'C. D.', available: true, category: Category.Software }
 ];
 
-let purgedBooks: Array<Book> = Purge(inventory);
-purgedBooks.forEach(book => console.log(book.title));
+let bookShelf: Shelf<Book> = new Shelf<Book>();
+inventory.forEach(book => bookShelf.add(book));
 
-let purgedNums: Array<number> = Purge<number>([1,2,3,4]);
-console.log(purgedNums);
+let firstBook: Book = bookShelf.getFirst();
+
+let magazines: Array<Magazine> = [
+  { title: 'Programming Language Monthly', publisher: 'Code Mags' },
+  { title: 'Literary Fiction Quarterly', publisher: 'College Press' },
+  { title: 'Five Points', publisher: 'GSU' }
+];
+
+let magazineShelf: Shelf<Magazine> = new Shelf<Magazine>();
+magazines.forEach(mag => magazineShelf.add(mag));
+
+let firstMagazine: Magazine = magazineShelf.getFirst();
+
+let numberShelf: Shelf<number> = new Shelf<number>();
+[5,10,15].forEach(num => numberShelf.add(num));
+
+// let purgedBooks: Array<Book> = Purge(inventory);
+// purgedBooks.forEach(book => console.log(book.title));
+
+// let purgedNums: Array<number> = Purge<number>([1,2,3,4]);
+// console.log(purgedNums);

@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const enums_1 = require("./enums");
-const utilityFunctions_1 = require("./lib/utilityFunctions");
+const shelf_1 = require("./shelf");
 function GetAllBooks() {
     let books = [
         { id: 1, title: 'Ulysses', author: 'James Joyce', available: true, category: enums_1.Category.Fiction },
@@ -95,7 +95,20 @@ let inventory = [
     { id: 12, title: '8-Bit Graphics with Cobol', author: 'A. B.', available: true, category: enums_1.Category.Software },
     { id: 13, title: 'Cool autoexec.bat Scripts!', author: 'C. D.', available: true, category: enums_1.Category.Software }
 ];
-let purgedBooks = (0, utilityFunctions_1.Purge)(inventory);
-purgedBooks.forEach(book => console.log(book.title));
-let purgedNums = (0, utilityFunctions_1.Purge)([1, 2, 3, 4]);
-console.log(purgedNums);
+let bookShelf = new shelf_1.default();
+inventory.forEach(book => bookShelf.add(book));
+let firstBook = bookShelf.getFirst();
+let magazines = [
+    { title: 'Programming Language Monthly', publisher: 'Code Mags' },
+    { title: 'Literary Fiction Quarterly', publisher: 'College Press' },
+    { title: 'Five Points', publisher: 'GSU' }
+];
+let magazineShelf = new shelf_1.default();
+magazines.forEach(mag => magazineShelf.add(mag));
+let firstMagazine = magazineShelf.getFirst();
+let numberShelf = new shelf_1.default();
+[5, 10, 15].forEach(num => numberShelf.add(num));
+// let purgedBooks: Array<Book> = Purge(inventory);
+// purgedBooks.forEach(book => console.log(book.title));
+// let purgedNums: Array<number> = Purge<number>([1,2,3,4]);
+// console.log(purgedNums);
