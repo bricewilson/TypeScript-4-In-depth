@@ -1,4 +1,8 @@
-export default class Shelf<T> {
+interface ShelfItem {
+  title: string;
+}
+
+export default class Shelf<T extends ShelfItem> {
   private _items: Array<T> = new Array<T>();
 
   add(item: T): void {
