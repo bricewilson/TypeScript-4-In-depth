@@ -115,3 +115,4 @@ console.log(`${softwareBook.title} (${softwareBook.author})`);
 // purgedBooks.forEach(book => console.log(book.title));
 // let purgedNums: Array<number> = Purge<number>([1,2,3,4]);
 // console.log(purgedNums);
+//# sourceMappingURL=app.js.map

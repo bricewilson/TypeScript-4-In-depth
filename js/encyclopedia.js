@@ -15,3 +15,4 @@ class Encyclopedia extends classes_1.ReferenceItem {
     }
 }
 exports.default = Encyclopedia;
+//# sourceMappingURL=encyclopedia.js.map

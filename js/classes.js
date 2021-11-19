@@ -26,3 +26,4 @@ class ReferenceItem {
 }
 exports.ReferenceItem = ReferenceItem;
 ReferenceItem.department = 'Research';
+//# sourceMappingURL=classes.js.map
