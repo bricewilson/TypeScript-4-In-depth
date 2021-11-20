@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const enums_1 = require("./enums");
-const shelf_1 = require("./shelf");
 function GetAllBooks() {
     let books = [
         { id: 1, title: 'Ulysses', author: 'James Joyce', available: true, category: enums_1.Category.Fiction },
@@ -89,30 +88,4 @@ function PrintBook(currentBook) {
     console.log(currentBook.title + ' by ' + currentBook.author);
 }
 // *********************************************
-let inventory = [
-    { id: 10, title: 'The C Programming Language', author: 'K & R', available: true, category: enums_1.Category.Software },
-    { id: 11, title: 'Code Complete', author: 'Steve McConnell', available: true, category: enums_1.Category.Software },
-    { id: 12, title: '8-Bit Graphics with Cobol', author: 'A. B.', available: true, category: enums_1.Category.Software },
-    { id: 13, title: 'Cool autoexec.bat Scripts!', author: 'C. D.', available: true, category: enums_1.Category.Software }
-];
-let bookShelf = new shelf_1.default();
-inventory.forEach(book => bookShelf.add(book));
-let firstBook = bookShelf.getFirst();
-let magazines = [
-    { title: 'Programming Language Monthly', publisher: 'Code Mags' },
-    { title: 'Literary Fiction Quarterly', publisher: 'College Press' },
-    { title: 'Five Points', publisher: 'GSU' }
-];
-let magazineShelf = new shelf_1.default();
-magazines.forEach(mag => magazineShelf.add(mag));
-let firstMagazine = magazineShelf.getFirst();
-magazineShelf.printTitles();
-let softwareBook = bookShelf.find('Code Complete');
-console.log(`${softwareBook.title} (${softwareBook.author})`);
-// let numberShelf: Shelf<number> = new Shelf<number>();
-// [5,10,15].forEach(num => numberShelf.add(num));
-// let purgedBooks: Array<Book> = Purge(inventory);
-// purgedBooks.forEach(book => console.log(book.title));
-// let purgedNums: Array<number> = Purge<number>([1,2,3,4]);
-// console.log(purgedNums);
 //# sourceMappingURL=app.js.map
