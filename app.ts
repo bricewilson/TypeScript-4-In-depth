@@ -4,6 +4,10 @@ import { UniversityLibrarian, ReferenceItem } from './classes';
 // import { CalculateLateFee as CalcFee, MaxBooksAllowed, Purge } from './lib/utilityFunctions';
 import refBook from './encyclopedia';
 import Shelf from './shelf';
+import * as _ from "lodash";
+
+let snakeCaseTitle: string = _.snakeCase('For Whom the Bell Tolls');
+console.log(snakeCaseTitle);
 
 function GetAllBooks(): Book[] {
   let books = [

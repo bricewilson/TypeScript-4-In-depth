@@ -1,6 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const enums_1 = require("./enums");
+const _ = require("lodash");
+let snakeCaseTitle = _.snakeCase('For Whom the Bell Tolls');
+console.log(snakeCaseTitle);
 function GetAllBooks() {
     let books = [
         { id: 1, title: 'Ulysses', author: 'James Joyce', available: true, category: enums_1.Category.Fiction },
